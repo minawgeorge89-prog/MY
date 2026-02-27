@@ -1,10 +1,8 @@
-<script>
 function toggleMenu() {
   const menu = document.getElementById("dropdownMenu");
   menu.style.display = menu.style.display === "block" ? "none" : "block";
 }
-</script>
-<script>
+
 function togglePickup() {
   const dropdown = document.getElementById("pickupDropdown");
   dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
@@ -26,4 +24,3 @@ function showLater() {
   datePicker.min = today.toISOString().split("T")[0];
   datePicker.max = maxDate.toISOString().split("T")[0];
 }
-</script>
