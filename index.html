@@ -1,6 +1,12 @@
-<header class="navbar">
-  <div class="nav-left"></div>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MY</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<header class="navbar">
   <div class="nav-center">
     <h1>MY</h1>
   </div>
@@ -19,19 +25,29 @@
     </div>
   </div>
 </header>
-<div class="order-options">
-  <button class="blue-btn">Delivery</button>
 
-  <div class="pickup-container">
-    <button class="blue-btn" onclick="togglePickup()">Pickup</button>
+<section class="hero">
+  <h2>Middle Yeast</h2>
+  <p>Oh MY! Fresh Dough, Fresh Flavor</p>
 
-    <div class="pickup-dropdown" id="pickupDropdown">
-      <button onclick="showNow()">Now</button>
-      <button onclick="showLater()">Later</button>
+  <div class="order-options">
+    <button class="blue-btn">Delivery</button>
 
-      <div id="calendarContainer" style="display:none;">
-        <input type="date" id="datePicker">
+    <div class="pickup-container">
+      <button class="blue-btn" onclick="togglePickup()">Pickup</button>
+
+      <div class="pickup-dropdown" id="pickupDropdown">
+        <button onclick="showNow()">Now</button>
+        <button onclick="showLater()">Later</button>
+
+        <div id="calendarContainer" style="display:none;">
+          <input type="date" id="datePicker">
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
