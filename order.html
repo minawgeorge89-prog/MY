@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order | Middle Yeast</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="site-config.js"></script>
+</head>
+<body>
+  <div id="siteHeader"></div>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Choose how you want it</h1>
+      <p>Pickup is available now. Delivery is coming soon.</p>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <h2>Pickup (ASAP)</h2>
+        <p>We’ll start your order right away.</p>
+        <button class="btn primary" id="pickupBtn">Pickup Now</button>
+      </div>
+
+      <div class="card">
+        <h2>Delivery</h2>
+        <p>Coming soon — we’re getting it ready.</p>
+        <button class="btn" id="deliveryBtn">Delivery (Coming Soon)</button>
+      </div>
+    </section>
+
+    <div class="footer">© <span id="year"></span> Middle Yeast</div>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="header.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("pickupBtn").addEventListener("click", function(){
+      localStorage.setItem("MY_ORDER_TYPE", "pickup");
+      window.location.href = "menu.html";
+    });
+
+    document.getElementById("deliveryBtn").addEventListener("click", function(){
+      localStorage.setItem("MY_ORDER_TYPE", "delivery");
+      MY.toast("Delivery is coming soon.");
+    });
+  </script>
+</body>
+</html>
