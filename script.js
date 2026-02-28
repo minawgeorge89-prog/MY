@@ -1,30 +1,43 @@
-function toggleMenu() {
-  const menu = document.getElementById("dropdownMenu");
-  menu.classList.toggle("show");
-}
+/* =========================================================
+   EDIT THIS FILE (site-config.js)
+   Change text, links, and menu items here — no hunting around.
+   ========================================================= */
 
-function closeMenu() {
-  const menu = document.getElementById("dropdownMenu");
-  menu.classList.remove("show");
-}
+window.SITE = {
+  brand: {
+    displayName: "Oh MY!",
+    slogan: "Fresh Dough. Fresh Flavor.",
+    businessName: "Middle Yeast",
+    storyTagline: "Where Dough Meets Flavor",
 
-function togglePickup() {
-  const panel = document.getElementById("pickupPanel");
-  panel.classList.toggle("show");
-}
+    donation: {
+      name: "Share the Warmth",
+      threshold: 25,
+      partner: "local churches"
+    },
 
-// Close dropdown if user clicks outside
-document.addEventListener("click", (e) => {
-  const menu = document.getElementById("dropdownMenu");
-  const btn = document.querySelector(".icon-btn");
-  if (!menu || !btn) return;
+    colors: {
+      bg: "#FFF8F2",
+      brand: "#A14E2C",
+      text: "#2B2B2B",
+      muted: "#6B6B6B",
+      border: "rgba(43,43,43,0.12)"
+    }
+  },
 
-  const clickedInsideMenu = menu.contains(e.target);
-  const clickedButton = btn.contains(e.target);
+  header: {
+    orderButtonText: "Let’s Eat",
+    orderButtonHref: "order.html",
 
-  if (!clickedInsideMenu && !clickedButton) {
-    menu.classList.remove("show");
+    dropdown: [
+      { label: "Menu", href: "menu.html" },
+      { label: "Deals", href: "deals.html" },
+      { label: "Catering", href: "catering.html" },
+      { label: "Our Story", href: "story.html" },
+      { label: "Share the Warmth", href: "warmth.html" },
+      { label: "Rewards", href: "rewards.html" },
+      { label: "Careers", href: "careers.html" },
+      { label: "Contact Us", href: "contact.html" }
+    ]
   }
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
+};
