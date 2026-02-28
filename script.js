@@ -1,27 +1,30 @@
 function toggleMenu() {
   const menu = document.getElementById("dropdownMenu");
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
+  menu.classList.toggle("show");
+}
+
+function closeMenu() {
+  const menu = document.getElementById("dropdownMenu");
+  menu.classList.remove("show");
 }
 
 function togglePickup() {
-  const pickup = document.getElementById("pickupDropdown");
-  pickup.style.display = pickup.style.display === "block" ? "none" : "block";
+  const panel = document.getElementById("pickupPanel");
+  panel.classList.toggle("show");
 }
 
-function showNow() {
-  document.getElementById("calendarContainer").style.display = "none";
-  alert("Pickup: Now");
-}
-
-function showLater() {
-  document.getElementById("calendarContainer").style.display = "block";
-}
-
-document.addEventListener("click", function (e) {
+// Close dropdown if user clicks outside
+document.addEventListener("click", (e) => {
   const menu = document.getElementById("dropdownMenu");
-  const icon = document.querySelector(".menu-icon");
+  const btn = document.querySelector(".icon-btn");
+  if (!menu || !btn) return;
 
-  if (!icon.contains(e.target) && !menu.contains(e.target)) {
-    menu.style.display = "none";
+  const clickedInsideMenu = menu.contains(e.target);
+  const clickedButton = btn.contains(e.target);
+
+  if (!clickedInsideMenu && !clickedButton) {
+    menu.classList.remove("show");
   }
 });
+
+document.getElementById("year").textContent = new Date().getFullYear();
