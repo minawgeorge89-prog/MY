@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart | Middle Yeast</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="site-config.js"></script>
+</head>
+<body>
+  <div id="siteHeader"></div>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Your Cart</h1>
+      <p>Simple starter cart (we can upgrade later).</p>
+    </section>
+
+    <section class="card" id="cartBox">
+      <div id="cartItems"></div>
+      <div class="notice" id="cartTotal"></div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+        <button class="btn primary" id="checkoutBtn">Checkout (placeholder)</button>
+        <button class="btn" id="clearBtn">Clear Cart</button>
+      </div>
+    </section>
+
+    <div class="footer">© <span id="year"></span> Middle Yeast</div>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="header.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function money(n){ return "$" + Number(n).toFixed(2); }
+
+    function renderCart(){
+      const items = MY.getCart();
+      const box = document.getElementById("cartItems");
+      const total = document.getElementById("cartTotal");
+
+      if(!items.length){
+        box.innerHTML = "<p style='color: var(--muted); margin:0;'>Your cart is empty.</p>";
+        total.textContent = "";
+        return;
+      }
+
+      let sum = 0;
+      box.innerHTML = items.map(it=>{
+        sum += (it.price||0) * (it.qty||1);
+        return `<div style="display:flex; justify-content:space-between; gap:10px; padding:10px 0; border-bottom:1px solid var(--border);">
+          <div>
+            <div style="font-weight:900;">${it.name}</div>
+            <div style="color: var(--muted); font-size: 13px;">Qty: ${it.qty||1}</div>
+          </div>
+          <div style="font-weight:900;">${money((it.price||0) * (it.qty||1))}</div>
+        </div>`;
+      }).join("");
+
+      total.innerHTML = "<strong>Total:</strong> " + money(sum);
+    }
+
+    document.getElementById("clearBtn").addEventListener("click", ()=>{ MY.clearCart(); renderCart(); });
+    document.getElementById("checkoutBtn").addEventListener("click", ()=>{ MY.toast("Checkout will be added later."); });
+
+    renderCart();
+  </script>
+</body>
+</html>
