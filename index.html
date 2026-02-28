@@ -3,91 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MY | Middle Yeast</title>
+  <title>Oh MY! | Middle Yeast</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="site-config.js"></script>
 </head>
 <body>
+  <div id="siteHeader"></div>
 
-<header class="navbar">
-  <div class="nav-left">
-    <a class="brand" href="#">
-      <span class="brand-mark">MY</span>
-    </a>
-  </div>
+  <main class="container">
+    <section class="hero">
+      <h1>Where Dough Meets Flavor</h1>
+      <p>Oh MY! Fresh Dough. Fresh Flavor. <strong>Middle Yeast</strong> is built on family care, real fermentation, and cultural pride — pizza + feteer in one warm place.</p>
+      <div class="notice"><strong>Tip:</strong> Click <strong>Let’s Eat</strong> to choose Pickup (ASAP) or Delivery (coming soon).</div>
+    </section>
 
-  <div class="nav-center">
-    <div class="brand-title">Middle Yeast</div>
-    <div class="brand-tagline">Oh MY! Fresh Dough, Fresh Flavor</div>
-  </div>
-
-  <div class="nav-right">
-    <button class="icon-btn" aria-label="Open menu" onclick="toggleMenu()">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-    </button>
-
-    <div class="dropdown-menu" id="dropdownMenu">
-      <a href="#rewards" onclick="closeMenu()">Rewards</a>
-      <a href="#support" onclick="closeMenu()">Customer Support</a>
-      <a href="#ads" onclick="closeMenu()">Ads</a>
-      <a href="#careers" onclick="closeMenu()">Careers</a>
-    </div>
-  </div>
-</header>
-
-<main class="container">
-  <section class="hero">
-    <h1>Order Now</h1>
-    <p>Neapolitan-style dough + Middle East inspiration.</p>
-
-    <div class="order-options">
-      <button class="blue-btn" type="button">Delivery</button>
-
-      <div class="pickup-container">
-        <button class="blue-btn" type="button" onclick="togglePickup()">Pickup</button>
-
-        <div class="pickup-panel" id="pickupPanel">
-          <label class="field">
-            <span>Choose pickup time</span>
-            <select>
-              <option>ASAP (20–30 min)</option>
-              <option>In 45 min</option>
-              <option>In 1 hour</option>
-            </select>
-          </label>
-
-          <button class="dark-btn" type="button">Continue</button>
-        </div>
+    <section class="cards">
+      <div class="card">
+        <h2>Quick Start</h2>
+        <p>Pickup is available now. Delivery will launch soon.</p>
+        <a class="btn primary" href="order.html">Let’s Eat</a>
       </div>
-    </div>
-  </section>
 
-  <section class="ad-section" id="ads">
-    <div class="card">
-      <h2>Featured</h2>
-      <p>Add your promo, coupon, or announcement here.</p>
-      <div class="ad-placeholder">Ad / Banner Area</div>
-    </div>
-  </section>
+      <div class="card">
+        <h2>Share the Warmth</h2>
+        <p>For every <strong>25 orders</strong>, we donate a fresh pizza or feteer through local churches — because good food should care.</p>
+        <a class="btn" href="warmth.html">Learn more</a>
+      </div>
+    </section>
 
-  <section class="info-grid">
-    <div class="card" id="rewards">
-      <h2>Rewards</h2>
-      <p>Earn points every order. (Hook this to your rewards later.)</p>
-      <button class="outline-btn" type="button">Join Rewards</button>
-    </div>
+    <div class="footer">© <span id="year"></span> Middle Yeast</div>
+  </main>
 
-    <div class="card" id="support">
-      <h2>Customer Support</h2>
-      <p>Questions? We’re here to help.</p>
-      <button class="outline-btn" type="button">Contact Us</button>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div>© <span id="year"></span> MY | Middle Yeast</div>
-  </footer>
-</main>
-
-<script src="script.js"></script>
+  <script src="app.js"></script>
+  <script src="header.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
