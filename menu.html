@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu | Middle Yeast</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="site-config.js"></script>
+</head>
+<body>
+  <div id="siteHeader"></div>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Menu</h1>
+      <p id="orderTypeLine">Select items to add to cart.</p>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <h2>Neapolitan Pizza (Signature)</h2>
+        <p>Simple, fresh, and light.</p>
+        <button class="btn primary" onclick="MY.addToCart({id:'pizza_sig', name:'Neapolitan Pizza (Signature)', price:13.99})">Add</button>
+      </div>
+
+      <div class="card">
+        <h2>Feteer (Classic)</h2>
+        <p>Flaky layers with warm comfort.</p>
+        <button class="btn primary" onclick="MY.addToCart({id:'feteer_classic', name:'Feteer (Classic)', price:9.99})">Add</button>
+      </div>
+
+      <div class="card">
+        <h2>Deals</h2>
+        <p>See bundles and promos.</p>
+        <a class="btn" href="deals.html">View Deals</a>
+      </div>
+
+      <div class="card">
+        <h2>Checkout</h2>
+        <p>Review your cart anytime.</p>
+        <a class="btn primary" href="cart.html">Go to Cart</a>
+      </div>
+    </section>
+
+    <div class="footer">© <span id="year"></span> Middle Yeast</div>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="header.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const type = localStorage.getItem("MY_ORDER_TYPE") || "pickup";
+    const line = document.getElementById("orderTypeLine");
+    line.textContent = (type === "delivery")
+      ? "Delivery selected (coming soon). You can still browse the menu."
+      : "Pickup selected (ASAP). Select items to add to cart.";
+  </script>
+</body>
+</html>
