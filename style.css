@@ -40,7 +40,7 @@ body{
 }
 
 .logo-wrap{
-  height: 90px;      /* controls logo size */
+  height: 95px;      /* controls logo size */
   display:flex;
   align-items:center;
 }
