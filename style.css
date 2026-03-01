@@ -35,15 +35,13 @@ body{
   padding:10px 16px;
 }
 
-/* LOGO (bigger + no frame) */
-.logo-wrap{
-  width: 76px;
-  height: 76px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.logo-wrap img{
+  width:100%;
+  height:100%;
+  object-fit: contain;
+  transform: scale(1.2);   /* ✅ zoom in to remove empty space */
+  transform-origin: center;
 }
-
 .logo-wrap img{
   width:100%;
   height:100%;
