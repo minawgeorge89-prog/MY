@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story | Middle Yeast</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+<header class="navbar">
+  <div class="nav-center">
+    <h1>MY</h1>
+  </div>
+
+  <div class="nav-right">
+    <div class="menu-icon" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
+    </div>
+
+    <div class="dropdown-menu" id="dropdownMenu">
+      <a href="index.html">Home</a>
+      <a href="story.html">Our Story</a>
+      <a href="#">Rewards</a>
+      <a href="#">Customer Support</a>
+    </div>
+  </div>
+</header>
+
+<section class="story-page">
+  <h2>Our Story</h2>
+
+  <p>
+    Middle Yeast began with a love for dough, fermentation, and the flavors that connect cultures.
+  </p>
+
+  <p>
+    Growing up around Middle Eastern kitchens meant learning that food is more than a meal — it’s tradition,
+    generosity, and community. At the same time, the craft of pizza inspired us with its simplicity, technique,
+    and universal appeal.
+  </p>
+
+  <p>
+    We created Middle Yeast to bring these worlds together.
+  </p>
+
+  <p>
+    By combining slow fermentation, fresh ingredients, and time-honored methods, we craft dough that is light,
+    flavorful, and unforgettable. Each pizza and pastry reflects our belief that quality takes patience and that
+    great food starts with great dough.
+  </p>
+
+  <p>
+    Our name represents both our roots and our process:
+    <strong>Middle</strong> for heritage and culture,
+    <strong>Yeast</strong> for life, growth, and the art of fermentation.
+  </p>
+
+  <p>
+    Whether you’re grabbing a quick bite or sharing a meal with family, we want every visit to feel welcoming,
+    comforting, and delicious.
+  </p>
+
+  <p><strong>From our kitchen to your table — Oh MY!</strong></p>
+</section>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.classList.toggle("show");
+  }
+</script>
+
+</body>
+</html>
