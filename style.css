@@ -120,3 +120,63 @@ body{
   margin-top:30px;
   color:var(--muted);
 }
+/* ===== RIGHT SIDE HEADER FIX + DROPDOWN MENU ===== */
+
+/* Make the right side align nicely */
+.brand-right{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  justify-content:flex-end;
+}
+
+/* Hide the dropdown links until menu button is clicked */
+.dropdown{
+  position: relative;
+}
+
+.dropdown-menu{
+  position:absolute;
+  right:0;
+  top: 54px;
+  width: 240px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 8px;
+  display:none;             /* ✅ hides links */
+  z-index: 999;
+}
+
+.dropdown-menu.show{
+  display:block;            /* ✅ shows when clicked */
+}
+
+.dropdown-menu a{
+  display:block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration:none;
+  color: var(--text);
+}
+
+.dropdown-menu a:hover{
+  background: rgba(161,78,44,0.12);
+}
+
+/* Style the menu icon button */
+#menuBtn{
+  border: 1px solid var(--border);
+  background: white;
+  border-radius: 14px;
+  width: 44px;
+  height: 44px;
+  cursor:pointer;
+}
+
+/* Remove ugly default link underline in header area */
+.header a{
+  text-decoration:none;
+}
