@@ -202,18 +202,19 @@ body{
 /* ===== BUTTONS ===== */
 .btn,
 .order-btn{
-  background:var(--brand);
-  color:white;
-  padding:10px 16px;
-  border-radius:30px;
+  background: var(--brand);
+  color: white;
+  padding:10px 18px;
+  border-radius: 28px;
   border:none;
-  font-weight:bold;
+  font-weight:700;
   cursor:pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 .btn:hover,
 .order-btn:hover{
-  filter: brightness(1.08);
+  background:#B35A35;
 }
 
 /* ===== STORY SECTION ===== */
