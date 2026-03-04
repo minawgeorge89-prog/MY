@@ -10,15 +10,16 @@
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
 body{
-  margin:0;
-  color:var(--ink);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:#EFD7C8;
+  color:#482D17;
+}
 
-  /* Menu-like parchment background */
-  background:
-    radial-gradient(1200px 500px at 20% 0%, rgba(255,255,255,0.55), transparent 60%),
-    radial-gradient(900px 600px at 90% 30%, rgba(255,255,255,0.35), transparent 55%),
-    linear-gradient(180deg, var(--bg), var(--bg2));
+.section-title{
+  color:#86582F;
+}
+
+.divider{
+  border-color:#B38253;
 }
 
 .topbar{
