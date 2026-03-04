@@ -1,43 +1,228 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Oh MY! | Middle Yeast</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Oh MY</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="site-config.js"></script>
 </head>
-<body>
-  <div id="siteHeader"></div>
 
-  <main class="container">
-    <section class="hero">
-      <h1>Where Dough Meets Flavor</h1>
-      <p>Oh MY! Fresh Dough. Fresh Flavor. <strong>Middle Yeast</strong> is built on family care, real fermentation, and cultural pride — pizza + feteer in one warm place.</p>
-      <div class="notice"><strong>Tip:</strong> Click <strong>Let’s Eat</strong> to choose Pickup (ASAP) or Delivery (coming soon).</div>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">Oh <span>MY</span></div>
+      <div class="brand-sub">Mediterranean & Middle Eastern flavors</div>
+    </div>
+
+    <nav class="navlinks" aria-label="Primary">
+      <button class="navbtn" data-page="home">Home</button>
+      <button class="navbtn" data-page="menu">Menu</button>
+      <button class="navbtn" data-page="contact">Contact</button>
+    </nav>
+
+    <div class="right">
+      <a class="cta" href="#" data-page="order">Order</a>
+
+      <!-- Hamburger -->
+      <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Dropdown -->
+      <div id="dropdown" class="dropdown" role="menu" aria-hidden="true">
+        <button class="dd-item" role="menuitem" data-page="share">Share</button>
+        <button class="dd-item" role="menuitem" data-page="warmth">Warmth</button>
+        <button class="dd-item" role="menuitem" data-page="story">Story Telling</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <!-- HOME -->
+    <section class="page active" id="page-home">
+      <div class="hero">
+        <div class="hero-card">
+          <h1>Feteer Meets Neapolitan</h1>
+          <p>Hand-crafted dough, bold Middle Eastern flavors, and pizza done right.</p>
+          <div class="hero-actions">
+            <button class="primary" data-page="menu">Explore Menu</button>
+            <button class="ghost" data-page="story">Our Story</button>
+          </div>
+        </div>
+
+        <!-- Replace hero.jpg with your image filename -->
+        <div class="hero-img" style="background-image:url('hero.jpg');" aria-label="Hero image"></div>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <h3>Artisan Dough</h3>
+          <p>Long-fermented, airy, and flavorful — built for crisp pizza & flaky pastries.</p>
+        </div>
+        <div class="card">
+          <h3>Middle Eastern Touch</h3>
+          <p>Tahini, olive oil, herbs, and spices — balanced and authentic.</p>
+        </div>
+        <div class="card">
+          <h3>Fast & Fresh</h3>
+          <p>Made-to-order, always warm, always fresh.</p>
+        </div>
+      </div>
     </section>
 
-   <section class="story">
-  <h2>Our Story</h2>
-  <p>
-    What started as a family concern about food discomfort became a journey
-    into fermentation, tradition, and better ingredients.
-    Middle Yeast was created to craft dough that feels as good as it tastes.
-  </p>
-  <a href="story.html">Read Our Story →</a>
-</section>
-  
-    <section class="cards">
-      <div class="card">
-        <h2>Quick Start</h2>
-        <p>Pickup is available now. Delivery will launch soon.</p>
-        <a class="btn primary" href="order.html">Let’s Eat</a>
+    <!-- MENU -->
+    <section class="page" id="page-menu">
+      <div class="pagehead">
+        <h2>Menu</h2>
+        <p>Simple today — we can add prices & more items later.</p>
       </div>
-    <div class="footer">© <span id="year"></span> Middle Yeast</div>
+
+      <div class="menu-grid">
+        <div class="menu-card">
+          <h3>Artisan Pizzas</h3>
+          <ul class="menu-list">
+            <li><b>Mediterranean Harvest</b> <span>Mozzarella, olives, tomato, feta, basil</span></li>
+            <li><b>Spiced Lamb Delight</b> <span>Ground lamb, onion, tahini drizzle</span></li>
+            <li><b>Classic Margherita</b> <span>San Marzano tomato, mozzarella, basil</span></li>
+            <li><b>Mushroom & Truffle</b> <span>Mozzarella, mushrooms, truffle oil</span></li>
+            <li><b>Build Your Own</b> <span>Choose base, cheese & toppings</span></li>
+          </ul>
+        </div>
+
+        <div class="menu-card">
+          <h3>Filled Pastries (Feteer / Mutabbak)</h3>
+          <ul class="menu-list">
+            <li><b>Ultimate Cheese</b> <span>Mozzarella + Middle Eastern cheeses</span></li>
+            <li><b>Chicken Ranch</b> <span>Herbed chicken, ranch drizzle</span></li>
+            <li><b>Ground Beef</b> <span>Spiced beef, onion, parsley</span></li>
+            <li><b>Spinach & Cheese</b> <span>Spinach, feta, mozzarella</span></li>
+          </ul>
+        </div>
+
+        <div class="menu-card">
+          <h3>Kids</h3>
+          <ul class="menu-list">
+            <li><b>Mini Pizza</b></li>
+            <li><b>Mini Cheese Pastry</b></li>
+            <li><b>Chicken Pastry</b></li>
+          </ul>
+        </div>
+
+        <div class="menu-card">
+          <h3>Drinks & Desserts</h3>
+          <ul class="menu-list">
+            <li><b>Soft Drinks</b></li>
+            <li><b>Fresh Mint Lemonade</b></li>
+            <li><b>Iced Tea</b></li>
+            <li><b>Bottled Water</b></li>
+            <li class="divider"></li>
+            <li><b>Kunafa</b></li>
+            <li><b>Rice Pudding</b></li>
+            <li><b>Chocolate Pudding</b></li>
+            <li><b>Ice Cream</b></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHARE -->
+    <section class="page" id="page-share">
+      <div class="pagehead">
+        <h2>Share</h2>
+        <p>Make it easy for customers to spread the word.</p>
+      </div>
+
+      <div class="card">
+        <h3>Share Message</h3>
+        <p class="quote">“Oh MY! Try the fusion of Neapolitan pizza & Egyptian feteer — fresh dough, bold flavor.”</p>
+
+        <div class="row">
+          <button class="primary" id="copyShare">Copy Share Text</button>
+          <a class="ghostlink" href="#" data-page="menu">View Menu</a>
+        </div>
+
+        <p class="muted small">Tip: Add your Instagram / Google Maps link here later.</p>
+      </div>
+    </section>
+
+    <!-- WARMTH -->
+    <section class="page" id="page-warmth">
+      <div class="pagehead">
+        <h2>Warmth</h2>
+        <p>How your brand feels — cozy, welcoming, handmade.</p>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <h3>Promise</h3>
+          <p>We serve warmth in every bite — fresh dough, real ingredients, and friendly service.</p>
+        </div>
+        <div class="card">
+          <h3>What customers notice</h3>
+          <ul class="bullets">
+            <li>Fresh baked smell</li>
+            <li>Golden flaky layers</li>
+            <li>Quick, kind service</li>
+            <li>Comfort food with a twist</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="page" id="page-story">
+      <div class="pagehead">
+        <h2>Story Telling</h2>
+        <p>Your story — short, strong, and memorable.</p>
+      </div>
+
+      <div class="card">
+        <h3>Our Story</h3>
+        <p>
+          Oh MY was born from two cravings: the blistered crust of Neapolitan pizza and the flaky comfort of Egyptian feteer.
+          We bring them together with Mediterranean ingredients and Middle Eastern warmth — so every bite feels familiar and exciting at the same time.
+        </p>
+        <p class="muted small">We can rewrite this in your exact words anytime.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="page" id="page-contact">
+      <div class="pagehead">
+        <h2>Contact</h2>
+        <p>Put your real details later.</p>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <h3>Hours</h3>
+          <p>Fri–Sun: 11am – 9pm<br/>Mon–Thu: 4pm – 9pm</p>
+        </div>
+        <div class="card">
+          <h3>Location</h3>
+          <p>Tomball / Houston Area<br/><span class="muted">Address here</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORDER -->
+    <section class="page" id="page-order">
+      <div class="pagehead">
+        <h2>Order</h2>
+        <p>This is a placeholder page for your ordering link.</p>
+      </div>
+
+      <div class="card">
+        <p>Add your DoorDash/UberEats/website ordering link here.</p>
+        <button class="primary" data-page="menu">See Menu</button>
+      </div>
+    </section>
   </main>
 
-<script src="site-config.js"></script>
-<script src="app.js"></script>
-<script src="header.js"></script>
+  <footer class="footer">
+    <span>© <span id="year"></span> Oh MY</span>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
